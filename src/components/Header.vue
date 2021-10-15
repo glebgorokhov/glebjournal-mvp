@@ -2,7 +2,7 @@
   <div class="header">
     <div class="container">
       <div class="left">
-        <div class="logo">ГJ</div>
+        <router-link to="/" class="logo">ГJ</router-link>
       </div>
 
       <div class="right">
@@ -14,7 +14,11 @@
         </template>
 
         <template v-else>
-          <div>User Name</div>
+          <div class="user">
+            <div class="avatar"></div>
+            <div class="name" v-if="user?.name">{{ user.name }}</div>
+          </div>
+          <router-link :to="`/user/${firebaseUser.uid}`">Профиль</router-link>
           <AppButton type="button" @click="signOut">Выйти</AppButton>
         </template>
       </div>
@@ -37,7 +41,7 @@ export default defineComponent({
     };
   },
   computed: {
-    ...mapGetters(["firebaseUser"]),
+    ...mapGetters(["firebaseUser", "user"]),
   },
   methods: {
     signOut() {
@@ -51,11 +55,13 @@ export default defineComponent({
 .header {
   padding: 20px 0;
   background: white;
+  height: 70px;
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
   }
 }
 
@@ -66,6 +72,26 @@ export default defineComponent({
 
 .right {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+
+  .name {
+    font-weight: 600;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    background: #eee;
+    border-radius: 5px;
+    margin-right: 16px;
+  }
 }
 
 .login-popup {

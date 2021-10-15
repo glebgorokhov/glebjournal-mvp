@@ -15,3 +15,19 @@ html {
   padding-left: 28px;
   padding-right: 28px;
 }
+
+.global-card {
+  border: 1px solid rgba(black, 0.1);
+  background: white;
+  border-radius: 5px;
+  padding: 24px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-main);
+
+  &:hover {
+    opacity: .5;
+  }
+}

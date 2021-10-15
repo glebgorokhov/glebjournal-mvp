@@ -67,7 +67,19 @@ export default defineComponent({
         .auth()
         .signInWithPopup(provider)
         .then((userCredential) => {
-          console.log(userCredential.additionalUserInfo); // TODO: Pass info to user profile if new user
+          console.log(userCredential);
+
+          if (userCredential.additionalUserInfo?.isNewUser) {
+            this.$store.dispatch("createUser", {
+              uid: userCredential?.user?.uid ?? null,
+              // @ts-ignore:next-line
+              name: userCredential.additionalUserInfo?.profile?.name ?? "",
+              // @ts-ignore:next-line
+              email: userCredential.additionalUserInfo?.profile?.email ?? "",
+              // @ts-ignore:next-line
+              avatar: userCredential.additionalUserInfo?.profile?.picture ?? "",
+            });
+          }
         })
         .catch((error) => {
           console.log(error);
