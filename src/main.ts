@@ -4,11 +4,13 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import firebase from "firebase";
 import { db, firebaseApp } from "./config/firebase";
 
-const app = createApp(App).use(store).use(router).mount("#app");
+const app = createApp(App).use(store).use(router);
 
-// @ts-expect-error
+app.config.globalProperties.$firebase = firebase;
 app.config.globalProperties.$firebaseApp = firebaseApp;
-// @ts-expect-error
 app.config.globalProperties.$firestore = db;
+
+app.mount("#app");

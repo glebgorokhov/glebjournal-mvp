@@ -1,0 +1,17 @@
+@import "modern-css-reset";
+
+html {
+  background: #eeeeee;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --color-main: #fb923c;
+}
+
+.container {
+  padding-left: 28px;
+  padding-right: 28px;
+}
