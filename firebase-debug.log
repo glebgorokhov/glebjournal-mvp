@@ -1,0 +1,25 @@
+[debug] [2021-10-15T03:30:24.449Z] ----------------------------------------------------------------------
+[debug] [2021-10-15T03:30:24.451Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\GlebGorokhov\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.ts init
+[debug] [2021-10-15T03:30:24.452Z] CLI Version:   9.20.0
+[debug] [2021-10-15T03:30:24.452Z] Platform:      win32
+[debug] [2021-10-15T03:30:24.452Z] Node Version:  v14.18.0
+[debug] [2021-10-15T03:30:24.453Z] Time:          Fri Oct 15 2021 06:30:24 GMT+0300 (East Africa Time)
+[debug] [2021-10-15T03:30:24.453Z] ----------------------------------------------------------------------
+[debug]
+[debug] [2021-10-15T03:30:24.461Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-15T03:30:24.461Z] > authorizing via signed-in user (theververy@gmail.com)
+[info]
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Projects\glebjournal-mvp
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
