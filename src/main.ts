@@ -8,6 +8,11 @@ import firebase from "firebase";
 import { db, firebaseApp, storage } from "./config/firebase";
 import "@/styles/index.scss";
 
+// General Font
+import "vfonts/Lato.css";
+// Monospace Font
+import "vfonts/FiraCode.css";
+
 const app = createApp(App).use(store).use(router);
 
 app.config.globalProperties.$firebase = firebase;

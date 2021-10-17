@@ -2,7 +2,9 @@
   <div class="header">
     <div class="container">
       <div class="left">
-        <router-link to="/" class="logo">ГJ</router-link>
+        <router-link to="/" class="logo">
+          <img src="~@/assets/icons/logo.svg" />
+        </router-link>
       </div>
 
       <div class="right">
@@ -66,8 +68,9 @@ export default defineComponent({
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  img {
+    display: block;
+  }
 }
 
 .right {
