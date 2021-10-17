@@ -1,23 +1,26 @@
 <template>
-  <Header />
-  <div class="row">
-    <div class="left container">
-      <div class="left-content">
-        <router-view />
+  <n-config-provider :date-locale="dateRuRU" :locale="ruRU">
+    <Header />
+    <div class="row">
+      <div class="left container">
+        <div class="left-content">
+          <router-view />
+        </div>
+      </div>
+      <div class="right container">
+        <div>Комментарии</div>
       </div>
     </div>
-    <div class="right container">
-      <div>Комментарии</div>
-    </div>
-  </div>
+  </n-config-provider>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Header from "@/components/Header.vue";
+import { ruRU, dateRuRU, NConfigProvider } from "naive-ui";
 
 export default defineComponent({
-  components: { Header },
+  components: { Header, NConfigProvider },
   created() {
     this.$firebaseApp.auth().onAuthStateChanged((user) => {
       this.$store.commit("setFirebaseUser", user);
@@ -26,6 +29,12 @@ export default defineComponent({
         this.$store.dispatch("subscribeToUser");
       }
     });
+  },
+  data() {
+    return {
+      ruRU,
+      dateRuRU,
+    };
   },
 });
 </script>
